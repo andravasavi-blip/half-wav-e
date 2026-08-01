@@ -1,0 +1,7 @@
+Time=10 Vin=-50 Vout=0
+Time=20 Vin=-20 Vout=0
+Time=30 Vin=0 Vout=0
+Time=40 Vin=20 Vout=20
+Time=50 Vin=50 Vout=50
+Time=60 Vin=-80 Vout=0
+Time=70 Vin=80 Vout=80s

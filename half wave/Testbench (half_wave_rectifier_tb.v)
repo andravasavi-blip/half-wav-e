@@ -1,0 +1,35 @@
+`timescale 1ns/1ps
+
+module half_wave_rectifier_tb;
+
+reg clk;
+reg signed [7:0] vin;
+wire signed [7:0] vout;
+
+half_wave_rectifier uut(
+    .clk(clk),
+    .vin(vin),
+    .vout(vout)
+);
+
+always #5 clk = ~clk;
+
+initial begin
+    clk = 0;
+
+    vin = -50; #10;
+    vin = -20; #10;
+    vin = 0;   #10;
+    vin = 20;  #10;
+    vin = 50;  #10;
+    vin = -80; #10;
+    vin = 80;  #10;
+
+    $finish;
+end
+
+initial begin
+    $monitor("Time=%0t Vin=%d Vout=%d",$time,vin,vout);
+end
+
+endmodule
